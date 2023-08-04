@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { authContext } from "../../Context/auth";
+import { authContext } from "../../Context/AuthContext";
 import { GoogleButton } from 'react-google-button';
 
 const Auth = () => {
     const {Login, logout} = useContext(authContext);
-    console.log(logout);
+    
     const googleHandler = async() => {
         Login();
         console.log(Login);
@@ -12,7 +12,9 @@ const Auth = () => {
 
     return(
         <>
+            <input type="number"/>
             <GoogleButton label="Connexion" onClick={googleHandler}/>
+            <GoogleButton label="Deconnexion" onClick={()=>logout()}/>
         </>
     )
 

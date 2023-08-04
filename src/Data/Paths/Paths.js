@@ -9,3 +9,5 @@ export {default as Soumission} from "../../Pages/Soumission/Soumission";
 export {default as Email} from "../../Components/Formulaires/Email";
 
 export {default as Admin} from "../../Pages/Auth/Auth";
+export {default as Dashboard} from "../../Pages/Dashboard/Dashboard";
+export {default as Board} from "../../Pages/Dashboard/Board";

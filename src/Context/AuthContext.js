@@ -1,4 +1,3 @@
-
 import { GoogleAuthProvider, signInWithPopup, signOut, } from "firebase/auth";
 import {doc, setDoc} from 'firebase/firestore';
 import React, { useState, useEffect } from "react";
@@ -45,8 +44,7 @@ const AuthProvider = ({children}) => {
             const docRef = doc(db, 'users', user.uid);
             await setDoc(docRef, {
                 nom: user.displayName,
-                email: user.email,
-                photo: user.photoURL
+                email: user.email
             },{merge: true})
 
         }
