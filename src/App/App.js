@@ -1,6 +1,6 @@
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"; 
 
-import { Layout, Main, Parcours, Contact, Projets, Soumission } from "../Data/Paths/Paths";
+import { Layout, Main, Parcours, Contact, Projets, Soumission, Admin } from "../Data/Paths/Paths";
 
 export default function App() {
     const routes =
@@ -33,6 +33,9 @@ export default function App() {
                         {
                             path:"soumission",
                             element:<Soumission/>
+                        }, {
+                            path:"admin",
+                            element: <Admin/>
                         }
                     ]
                 },
