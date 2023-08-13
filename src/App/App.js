@@ -1,7 +1,7 @@
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"; 
 
 import { Layout, Main, Parcours, Contact, Projets, Soumission, 
-    Admin, Dashboard, Board } from "../Data/Paths/Paths";
+    Admin, Dashboard, Board, AjouterParcours, AJouterProjet } from "../Data/Paths/Paths";
 import { useContext } from "react";
 import { authContext } from "../Context/AuthContext";
 
@@ -60,14 +60,49 @@ export default function App() {
                         element: <Navigate to="/dasboard" replace/>
                     },
                     {
-                        path:'dashboard',
+                        path:'dasboard',
                         element: <Board/>
+                    }, 
+                    {
+                        path:'ajouterProjet',
+                        element: <AJouterProjet/>
+                    },
+                    {
+                        path:'ajouterParcours',
+                        element: <AjouterParcours/>
+                    },
+                    {
+                        path:'site/',
+                        element:<Layout/>,
+                        children: [
+                            {
+                                path:"intro",
+                                element:<Main/>
+                            },
+                            {
+                                path:"projets",
+                                element:<Projets/>
+                            },
+                            {
+                                path:"parcours",
+                                element:<Parcours/>
+                            },
+                            {
+                                path:"contact",
+                                element:<Contact/>
+                            },
+                            {
+                                path:"soumission",
+                                element:<Soumission/>
+                            }
+                        ]
                     }
+                   
                 ]
             },
             {
                 path:'*',
-                element: <Navigate to="/intro" replace/>
+                element: <Navigate to="/dasboard" replace/>
             }
         ]
     

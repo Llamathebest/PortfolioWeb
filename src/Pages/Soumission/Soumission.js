@@ -14,7 +14,7 @@
    
     import { useState } from "react";
     import { typeProjet, Web, Jeu, Option, Graphisme } from "../../Data/Data";
-    import {Email} from "../../Data/Paths/Paths";
+    import { Email } from "../../Data/Paths/Paths";
     
         const Soumission =() => {
             const [type, setType] = useState(typeProjet);
