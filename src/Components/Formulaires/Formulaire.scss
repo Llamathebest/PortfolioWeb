@@ -1,0 +1,43 @@
+
+.contact {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    margin : 5em 0;
+    .App {
+        width: 100%;
+        button {
+            width: 100%;
+        }
+    }
+    span {
+        margin: 2em 0;
+        text-align: center;
+        p {
+            width: 100%;
+            &:first-of-type {
+                font-weight: bold;
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) {
+    .contact {
+        flex-direction: row;
+        .App {
+            width: 50%;
+        }
+        span {
+            margin-left: 15%;
+            margin-top: 6em;
+            text-align: left;
+            p {
+                margin-left: 2em;
+                &:first-of-type {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+}

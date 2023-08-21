@@ -1,0 +1,42 @@
+
+.little {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    margin: .5em 0;
+    .img {
+        background-color: black;
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+    }
+    p {
+        text-align: center;
+        width: 100%;
+        margin-left: 1em;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .little {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 10em;
+        margin: .5em 0;
+        .img {
+            background-color: black;
+            border-radius: 50%;
+            width: 2em;
+            height: 2em;
+        }
+        p {
+            text-align: left;
+            width: 100%;
+            margin-left: 1em;
+        }
+    }
+
+}

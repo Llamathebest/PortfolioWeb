@@ -1,7 +1,9 @@
 import { GoogleAuthProvider, signInWithPopup, signOut, } from "firebase/auth";
-import {doc, setDoc} from 'firebase/firestore';
+import {doc, getDocs, collection} from 'firebase/firestore';
 import React, { useState, useEffect } from "react";
 import { auth, db } from "../Config/Firebase";
+import { useLocation, useNavigate } from "react-router-dom";
+
 const authContext = React.createContext({
     Login: () => {},
     logout: () => {},
@@ -13,22 +15,20 @@ const authContext = React.createContext({
 const {Provider} = authContext;
 
 const AuthProvider = ({children}) => {
-    const email = "sbeauchampprod@gmail.com";
+    const [email, setEmail] = useState();
     const [user, setUser] = useState();
     const [isLoading, setLoading] = useState(true);
 
-    
-    
-    const Login = async() => {
-        const providerGoogle = new GoogleAuthProvider();
-        const cred = await signInWithPopup(auth, providerGoogle);
-        saveDoc(cred.user);
-        
-    }
-    const logout = async() => {
-        signOut(auth);
-        setUser();
-    }
+    useEffect(() => {
+        const getDocument = async() => {
+            const refs = await getDocs(collection(db, "users"));
+            console.log(refs)
+            setEmail(refs.docs.map(doc => doc.data()
+            ));
+            
+        };
+        getDocument() 
+    },[])
     useEffect(() => {
         const unsub = auth.onAuthStateChanged(user => {
             setUser(user);
@@ -36,23 +36,24 @@ const AuthProvider = ({children}) => {
         });
         
         return unsub;
-    },[]);
-    
-    
-    const saveDoc = async(user) => {
-        try {
-            const docRef = doc(db, 'users', user.uid);
-            await setDoc(docRef, {
-                nom: user.displayName,
-                email: user.email
-            },{merge: true})
+    },[]); 
 
-        }
-        catch(error){
-            console.log(error)
-        }
-
+    console.log(email);
+    
+    const Login = async() => {
+        const providerGoogle = new GoogleAuthProvider();
+        const cred = await signInWithPopup(auth, providerGoogle);
+        console.log(cred.user.email)
+        if (cred.user.email !== email[0].email)
+            logout();
+        
     }
+    const logout = async() => {
+        signOut(auth);
+        setUser();
+    }
+    
+
     
 
 

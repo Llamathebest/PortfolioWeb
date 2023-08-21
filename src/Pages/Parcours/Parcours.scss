@@ -1,0 +1,176 @@
+
+.header {
+    width: 100%;
+    .titre {
+        span {
+            width: 100%;
+            .parcours {
+                letter-spacing: normal;
+            }
+        }
+    }
+}
+
+h2 {
+    text-align: center;
+
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 5em 0;
+    span {
+        width: 100%;
+        margin: 5em 0;
+        
+    }
+    .selection {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        
+    }
+    .education_info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 1em 0;
+        .diplome {
+            margin:0;
+        }
+        
+        .date {
+            margin-top: auto;
+        }
+        h5 {
+            margin:0
+        }
+    }
+}
+.experience {
+    .bumble {
+        display: flex;
+        margin: 1em 0;
+        min-height: 10em;
+        max-height: 25em;
+        h4 {
+            font-size: 1.2em;
+            margin:0;
+        }
+        .date {
+            font-style: italic;
+        }
+        .temps {
+            .img {
+                background-color: black;
+                border-radius: 50%;
+                width: 3em;
+                height: 3em;
+                margin: 1em;
+                position: relative;
+                height: 3em;
+            }
+            .ligne {
+                background-color: black;
+                width: .3em;
+                height: 60%;
+                margin: auto;
+            }
+        }
+        .info {
+            margin: 2em 1em;
+            .taches {
+                display: none;
+
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .header {
+        width: 100%;
+        .titre {
+            span {
+                width: 50%;
+                .parcours {
+                    letter-spacing: normal;
+                }
+            }
+        }
+    }
+    h2 {
+        text-align: left;
+    }
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        margin: 5em 0;
+        flex-direction: row;
+        span {
+            width: 45%;
+            max-height: 25vh;
+        }
+        .selection {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-height: 100%;
+        }
+        .education_info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 1em 0;
+            
+            .date {
+                margin-top: auto;
+            }
+            h5 {
+                margin:0
+            }
+        }
+    }
+    .experience {
+        .bumble {
+            display: flex;
+            margin: 1em 0;
+            min-height: 15em;
+            max-height: 25em;
+            h4 {
+                font-size: 1.5em;
+                margin:0;
+            }
+            .date {
+                font-style: italic;
+            }
+            .temps {
+                .img {
+                    background-color: black;
+                    border-radius: 50%;
+                    width: 3em;
+                    height: 3em;
+                    margin: 1em;
+                    position: relative;
+                    height: 3em;
+                }
+                .ligne {
+                    background-color: black;
+                    width: .5em;
+                    height: 70%;
+                    margin: auto;
+                }
+            }
+            .info {
+                margin: 2em 1em;
+                .taches {
+                    display: block;
+                    margin: 1.5em 1em;
+                }
+            }
+        }
+    }
+
+}
+

@@ -1,18 +1,27 @@
+import { Header, Caroussel,Fiche, SmallFiche, Formulaire } from "../Data/Paths/Paths";
+import { Goal } from "../Data/Data";
+import "./Main.scss";
 
 const Main = () => {
     return(
         <>
-            <div>
-                <h1>SBeauchamp PROD.</h1>
-                <p>The sky is the limit</p>
-            </div>
-            <div>
-                <img src="" alt=""/>
-                <div>
-                    <h3>Goal</h3>
-                    <p>Permet au étudiant de pouvoir avoir un avant goût de réelle projet dans la vie de tout les jours.</p>
+            <Header titre="Sabrina Beauchamp" paragraphe="Production" img="" />
+
+            <Fiche titre={Goal.titre} texte={Goal.texte}/>
+
+            <Caroussel/>
+
+            <article className="recents">
+                <h2>Projets Récents</h2>
+                <div className="fiches">
+                    <SmallFiche titre="Lorem ipsum" ligne="Lorem ipsum Lorem ipsum"/>
+                    <SmallFiche titre="Lorem ipsum" ligne="Lorem ipsum Lorem ipsum"/>
+                    <SmallFiche titre="Lorem ipsum" ligne="Lorem ipsum Lorem ipsum"/>
                 </div>
-            </div>
+            </article>
+            <article className="contact">
+                <Formulaire/>
+            </article>
         </>
     )
 }

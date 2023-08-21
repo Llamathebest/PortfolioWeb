@@ -1,0 +1,107 @@
+html {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: .105em;
+    line-height: 1.4em;
+    
+}
+
+html, body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*[Affecte tous les enfants]*/
+*,
+*::before,
+*::after {
+    // width: 100vw;
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+/*[Reset des liens]*/
+a,a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*[Reset des listes à l'intérieur d'un nav]*/
+nav{
+    & ul{
+        list-style: none;
+    }
+}
+
+img{
+    display:block;
+}
+li{
+    list-style: none;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+input, select {
+    border: none;
+}
+
+header {
+    width: 100%;
+    padding: 2em 1em;
+    background-color: gainsboro;
+    display: flex !important;
+    justify-content: space-between;
+    .menuPrincipal {
+        width: 50%;
+        margin-right: auto;
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
+    }
+    
+}
+
+footer {
+    background-color: gainsboro;
+    padding: 2em 1em;
+    position: static;
+    bottom: 0;
+    div {
+        width: 10%;
+        margin: auto;
+    }
+}
+
+main {
+    width: 80vw;
+    margin: 2vh auto;
+}
+h3 {
+    font-size: 3em;
+}
+
+@media only screen and (min-width:768px) {
+    h2 {
+        font-size: 3em !important; 
+    }
+}
+
+

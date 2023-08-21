@@ -1,0 +1,31 @@
+
+.recents {
+    width: 100%;
+    margin: 8em 0;
+    .fiches {
+        width: 100%;
+    }
+    h2 {
+        width: 100%;
+        margin-top: 5%;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width:768px) {
+
+    .recents {
+        display: flex;
+        .fiches {
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+        }
+        h2 {
+            width: 50%;
+            text-align: left;
+            
+        }
+    
+    }
+}

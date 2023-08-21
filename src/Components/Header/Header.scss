@@ -1,0 +1,46 @@
+.header {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .titre {
+        width: 80%;
+        font-size: .8em;
+        padding-top: 15%;
+        display: flex;
+        justify-content: space-between;
+        h1 {
+            font-size: 4em;
+            padding-bottom: .5em;
+            border-bottom: .2em solid black;
+            font-weight: bolder;
+        }
+        p {
+            letter-spacing: 1.5em;
+        }
+    }
+    .img {
+        display: none;
+    }
+    .reseau-social {
+        display: flex;
+        width: 45%;
+        justify-content: space-between;
+    }
+}
+@media only screen and(min-width: 768px) {
+    .header {
+        height: 40vh;
+        .titre {
+            font-size: 1em;
+        }
+        .img {
+            display: block;
+        }
+        .reseau-social {
+            width: 15%;
+        }
+    }
+
+}

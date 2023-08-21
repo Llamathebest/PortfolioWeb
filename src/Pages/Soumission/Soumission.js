@@ -14,7 +14,7 @@
    
     import { useState } from "react";
     import { typeProjet, Web, Jeu, Option, Graphisme } from "../../Data/Data";
-    import { Email } from "../../Data/Paths/Paths";
+    import { Email, Header } from "../../Data/Paths/Paths";
     
         const Soumission =() => {
             const [type, setType] = useState(typeProjet);
@@ -25,6 +25,8 @@
             
             const list = selectType?.filter(r => r.isTrue)?.map(r => r.name)
             
+
+            console.log(selectType);
             const SelectedType = (props, texte) => {
                 setSelectType(options[texte]);
                 HandlerMessage(props, type[texte]);
@@ -55,44 +57,48 @@
             const disable = selectType != null && message.typeProjet != null && list != null &&  message.description != null;
             return(
                 <>
-                {
-                    !next ?
-                        <div>
+                    <Header titre={"Soumission"} paragraphe={"Formulaire"}/>
+                    {
+                        !next ?
                             <div>
-                            <label htmlFor="type">Type de projet:</label>
-                            <select id="type" name="type" onChange={(e) => SelectedType( "typeProjet", e.target.value)}>
-                                <option value="select" select> choisir une option</option>
-                            
-                                {
-                                    type?.map((i,t) => <option key={"Projet_"+t} value={t}>{i}</option>)
-                                }
-                            </select>
-                            </div>
-    
-                            <div>
-                                <label htmlFor="type">Ressources:</label>
+                                <div>
+                                <label htmlFor="type">Type de projet:</label>
+                                <select id="type" name="type" onChange={(e) => SelectedType( "typeProjet", e.target.value)}>
+                                    <option value="select" select> choisir une option</option>
                                 
                                     {
-                                        selectType?.map(({name, isTrue}) => 
-                                            <div key={"Ressources_"+name}>
-                                                <input type="checkbox" id={name} name={name} value={name} checked={isTrue} onChange={(e) =>SelectedRessources(e.target.value)} />
-                                                <label htmlFor={name}> {name}</label>
-                                            </div>
-                                        
-                                        )
+                                        type?.map(({type}) => <option key={"Projet_"+type} value={type}>{type}</option>)
                                     }
+                                </select>
+                                </div>
+                                {
+                                    selectType  ? 
+                                    <div>
+                                        <label htmlFor="type">Ressources:</label>
+                                        
+                                            {
+                                                selectType?.map(({name, isTrue}) => 
+                                                    <div key={"Ressources_"+name}>
+                                                        <input type="checkbox" id={name} name={name} value={name} checked={isTrue} onChange={(e) =>SelectedRessources(e.target.value)} />
+                                                        <label htmlFor={name}> {name}</label>
+                                                    </div>
+                                                
+                                                )
+                                            }
+                                    </div>
+                                    :null
+                                }
+        
+                                <div>
+                                    <label htmlFor="description">Description</label>
+                                    <textarea id="description" name="description" rows="4" cols="50" placeholder="Description of your project" onChange={(e) => HandlerMessage("description", e.target.value)}>
+                                        
+                                    </textarea>
+                                </div>
+                                <button onClick={Step} disabled={!disable}>Prochain</button>
                             </div>
-    
-                            <div>
-                                <label htmlFor="description">Description</label>
-                                <textarea id="description" name="description" rows="4" cols="50" placeholder="Description of your project" onChange={(e) => HandlerMessage("description", e.target.value)}>
-                                    
-                                </textarea>
-                            </div>
-                            <button onClick={Step} disabled={!disable}>Next step</button>
-                        </div>
-                        :
-                        <Email message={message} ressources={selectType?.find(r => r.isTrue = true)}/>
+                            :
+                            <Email message={message} ressources={selectType?.find(r => r.isTrue = true)}/>
                     }
                 </>
     
