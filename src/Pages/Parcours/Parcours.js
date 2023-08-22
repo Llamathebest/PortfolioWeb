@@ -10,19 +10,22 @@ const Parcours =() => {
     return(
         <>
             <div className="header">
-            <div className="titre">
-                <span>
-                    <h1>
-                        Parcours
-                    </h1>
-                    <p className="parcours">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Ducimus pariatur soluta quos quam amet! Sequi, nihil autem. 
-                        Repellendus commodi suscipit molestias, facilis, quasi rem, rerum minima ut obcaecati quod eos?</p>
-                </span>
-                <div className="img">
-                    <img src="" alt="img_header" />
+                <div className="titre">
+                    <span>
+                        <h1>
+                            Parcours
+                        </h1>
+                        <p className="parcours">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Ducimus pariatur soluta quos quam amet! Sequi, nihil autem. 
+                            Repellendus commodi suscipit molestias, facilis, quasi rem, 
+                            rerum minima ut obcaecati quod eos?
+                        </p>
+                    </span>
+                    <div className="img">
+                        <img src="" alt="img_header" />
+                    </div>
                 </div>
-            </div>
             </div>
             <article className="flex">
                 <span>
@@ -30,7 +33,7 @@ const Parcours =() => {
                     <div >
                         {
                             Education?.map(({diplome, ecole, date})=>(
-                                <span className="education_info">
+                                <span className="education_info" key={ecole}>
                                     <span className="diplome">
                                         <h5>{diplome}</h5>
                                         <p>{ecole}</p>
@@ -47,7 +50,7 @@ const Parcours =() => {
                     <div className="selection">
                         {
                             Logiciels?.map((log) =>(
-                                <Little nom={log}/>
+                                <Little nom={log} key={log}/>
 
                             ))
                         }
@@ -59,7 +62,7 @@ const Parcours =() => {
                 <h2>Expériences</h2>
                 {
                     Experiences?.map(({entreprise, poste, date, taches}) =>(
-                        <div className="bumble">
+                        <div className="bumble" key={entreprise}>
                             <span className="temps">
                                 <div className="img">
                                     <img src="" alt="emplois"/>
@@ -83,7 +86,7 @@ const Parcours =() => {
                 <h3>Bénévolat</h3>
                 {
                     Benevolat?.map(({projet, poste, date, taches}) =>(
-                        <div className="bumble">
+                        <div className="bumble" key={projet}>
                             <span className="temps">
                                 <div className="img">
                                     <img src="" alt="benevolat"/>
@@ -96,7 +99,7 @@ const Parcours =() => {
                                 <div className="taches">
                                     {
                                         taches?.map((t) => (
-                                            <p>{t}</p>
+                                            <p key={t}>{t}</p>
                                         ))
                                     }
                                 </div>
@@ -111,7 +114,7 @@ const Parcours =() => {
                     <div className="selection">
                         {
                             Languages?.map((lan) =>(
-                                <Little nom={lan}/>
+                                <Little nom={lan} key={lan}/>
 
                             ))
                         }
@@ -122,7 +125,7 @@ const Parcours =() => {
                     <div>
                         {
                             Loisir?.map((l) =>(
-                                <p>{l}</p>
+                                <p key={l}>{l}</p>
                             ))
                         }
                     </div>

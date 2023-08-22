@@ -1,0 +1,25 @@
+.champs {
+    display: flex;
+        flex-direction: column;
+        min-height: 7em;
+        max-height: 13em;
+        margin:2em 0;
+    label {
+        font-size: 2em;
+        height: 100% ;
+        padding: .5em 0;
+    }
+    input {
+        border: .1em solid black !important;
+        height: 3em;
+    }
+    textarea {
+        border: .1em Solid black !important;
+        height: 10em;
+
+    }
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}

@@ -15,6 +15,8 @@
     import { useState } from "react";
     import { typeProjet, Web, Jeu, Option, Graphisme } from "../../Data/Data";
     import { Email, Header } from "../../Data/Paths/Paths";
+
+    import "./Soumission.scss";
     
         const Soumission =() => {
             const [type, setType] = useState(typeProjet);
@@ -26,8 +28,9 @@
             const list = selectType?.filter(r => r.isTrue)?.map(r => r.name)
             
 
-            console.log(selectType);
+            console.log(typeProjet);
             const SelectedType = (props, texte) => {
+                console.log(options);
                 setSelectType(options[texte]);
                 HandlerMessage(props, type[texte]);
             };
@@ -53,53 +56,56 @@
                 setNext(!next);
                 HandlerMessage("ressources", list)
             };
+            console.log(next)
             
             const disable = selectType != null && message.typeProjet != null && list != null &&  message.description != null;
             return(
                 <>
                     <Header titre={"Soumission"} paragraphe={"Formulaire"}/>
-                    {
-                        !next ?
-                            <div>
-                                <div>
-                                <label htmlFor="type">Type de projet:</label>
+                        {
+                            !next ?
+                            <div className="soumission">
+                                <div className="section">
+                                <label htmlFor="type">Type de projet</label>
                                 <select id="type" name="type" onChange={(e) => SelectedType( "typeProjet", e.target.value)}>
-                                    <option value="select" select> choisir une option</option>
+                                    <option defaultValue="select" > choisir une option</option>
                                 
                                     {
-                                        type?.map(({type}) => <option key={"Projet_"+type} value={type}>{type}</option>)
+                                        type?.map(({type},i) => <option key={"Projet_"+type} value={i}>{type}</option>)
                                     }
                                 </select>
                                 </div>
                                 {
                                     selectType  ? 
-                                    <div>
-                                        <label htmlFor="type">Ressources:</label>
-                                        
+                                    <div className="section">
+                                        <label htmlFor="type">Ressources</label>
+                                        <span className="border">
                                             {
                                                 selectType?.map(({name, isTrue}) => 
-                                                    <div key={"Ressources_"+name}>
-                                                        <input type="checkbox" id={name} name={name} value={name} checked={isTrue} onChange={(e) =>SelectedRessources(e.target.value)} />
+                                                <div key={"Ressources_"+name} className="ressource">
                                                         <label htmlFor={name}> {name}</label>
+                                                        <input type="checkbox" id={name} name={name} value={name} checked={isTrue} onChange={(e) =>SelectedRessources(e.target.value)} />
                                                     </div>
                                                 
                                                 )
                                             }
+                                        </span>
+                                        
                                     </div>
                                     :null
                                 }
         
-                                <div>
+                                <div className="section">
                                     <label htmlFor="description">Description</label>
                                     <textarea id="description" name="description" rows="4" cols="50" placeholder="Description of your project" onChange={(e) => HandlerMessage("description", e.target.value)}>
                                         
                                     </textarea>
                                 </div>
-                                <button onClick={Step} disabled={!disable}>Prochain</button>
+                                <button onClick={Step} disabled={!disable} >Prochain</button>
                             </div>
-                            :
-                            <Email message={message} ressources={selectType?.find(r => r.isTrue = true)}/>
-                    }
+                                :
+                                <Email message={message} step={Step} ressources={selectType?.find(r => r.isTrue = true)}/>
+                            }
                 </>
     
             )

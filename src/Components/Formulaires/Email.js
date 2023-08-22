@@ -3,7 +3,12 @@ import { Form, Input, TextArea, Button } from 'semantic-ui-react';
 import Message from "./Message";
 import Swal from 'sweetalert2';
 
-const Email = ({message}) => {
+import "./Email.scss";
+import { useState } from 'react';
+
+const Email = ({message, step}) => {
+  const [info, setInfo] = useState([]);
+
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -25,36 +30,40 @@ const Email = ({message}) => {
         e.target.reset()
       };
 
+      const handlerInfo = (props, contenu) => {
+        setInfo(current => {
+            return {
+                ...current,
+                [props]:contenu
+            }
+        })
+    };
+    
+    
+
+    const disable = info.name && info.email;
+           
+
   return (
     <div className="App">
     <Form onSubmit={handleOnSubmit}>
-      <Form.Field
-        id='form-input-control-email'
-        control={Input}
-        label='Email'
-        name='user_email'
-        placeholder='Email…'
-        required
-        icon='mail'
-        iconPosition='left'
-      />
-      <Form.Field
-        id='form-input-control-last-name'
-        control={Input}
-        label='Name'
-        name='user_name'
-        placeholder='Name…'
-        required
-        icon='user circle'
-        iconPosition='left'
-      />
-      <Form.Field id='form-textarea-control-opinion'>
+      <div className='champs'>
+        <label name="user_email">Courriel</label>
+        <input name='user_email' type='email' onChange={(e) => handlerInfo( "name", e.target.value)}/>
+      </div>
+      <div className='champs'>
+        <label name="user_name">Nom et Prénom</label>
+        <input name='user_name' type='text' onChange={(e) => handlerInfo( "email", e.target.value)}/>
+      </div>
+      <div className='champs'>
+        <label name="user_message">Visuel du courriel</label>
         <Message contenu={message}/>
-    
-        
-      </Form.Field>
-
-      <Button type='submit' color='green'>Submit</Button>
+      </div>
+      
+      <div className='buttons'>
+        <Button onClick={step} >Retour </Button>
+        <Button type='submit' color='green' disabled={!disable}>Envoyer</Button>
+      </div>
     </Form>
   </div>
   );

@@ -1,5 +1,5 @@
 .header {
-    width: 100vw;
+    width: 100%;
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -7,7 +7,7 @@
     .titre {
         width: 80%;
         font-size: .8em;
-        padding-top: 15%;
+        margin: auto 0;
         display: flex;
         justify-content: space-between;
         h1 {

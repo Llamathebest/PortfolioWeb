@@ -1,10 +1,14 @@
 import { Header, Formulaire } from "../../Data/Paths/Paths";
+import "./Contact.scss"
 
 const Contact = () => {
     return (
         <>
             <Header titre={"Contact"} paragraphe={"Information"}/>
-            <Formulaire/>
+            <div className="contact">
+                <Formulaire/>
+            </div>
+        
         </>
     )
 }

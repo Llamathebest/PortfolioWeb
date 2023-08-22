@@ -9,7 +9,7 @@ const Projets = () => {
             <div>
                 {
                     typeProjet.map(({type, texte, img, reverse}) => (
-                        <Fiche titre={type} texte={texte} img={img} right={reverse} /> 
+                        <Fiche key={type} titre={type} texte={texte} img={img} right={reverse} /> 
                     ))
                 }
             </div>
