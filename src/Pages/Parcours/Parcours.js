@@ -49,8 +49,8 @@ const Parcours =() => {
                     <h2>Logiciels</h2>
                     <div className="selection">
                         {
-                            Logiciels?.map((log) =>(
-                                <Little nom={log} key={log}/>
+                            Logiciels?.map(({nom, url}) =>(
+                                <Little nom={nom} key={nom} img={"icons/"+url}/>
 
                             ))
                         }
@@ -113,8 +113,8 @@ const Parcours =() => {
                     <h2>Languages</h2>
                     <div className="selection">
                         {
-                            Languages?.map((lan) =>(
-                                <Little nom={lan} key={lan}/>
+                            Languages?.map(({nom, url}) =>(
+                                <Little nom={nom} key={nom} img={"icons/"+url}/>
 
                             ))
                         }

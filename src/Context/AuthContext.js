@@ -1,5 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup, signOut, } from "firebase/auth";
-import {doc, getDocs, collection} from 'firebase/firestore';
+import {doc, getDocs, collection, addDoc, setDoc} from 'firebase/firestore';
 import React, { useState, useEffect } from "react";
 import { auth, db } from "../Config/Firebase";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ const authContext = React.createContext({
     Login: () => {},
     logout: () => {},
     updateProfilePic: () => {},
+    ajouterProjet: () => {},
+    modifierProjet: () => {},
     user: null,
     isLoading: true,
 });
@@ -52,13 +54,32 @@ const AuthProvider = ({children}) => {
         signOut(auth);
         setUser();
     }
+
+    const ajouterProjet = async(projet) => {
+        const docRef = await addDoc(collection(db, 'projets'), {
+            ...projet
+        });
+    }
+    const modifierProjet = async(id, description, head_img, img, nom, technologies, type) => {
+
+        const docRef2 = doc(db, 'projets', id);
+
+        await setDoc(docRef2, {
+            description:description,
+            head_img:head_img,
+            img:img,
+            nom:nom,
+            technologies:technologies,
+            type:type
+        },{merge: true})
+    }
     
 
     
 
 
     return (
-        <Provider value={{Login, logout, user, isLoading}}>
+        <Provider value={{Login, logout, user, isLoading, ajouterProjet, modifierProjet}}>
             {children}
         </Provider>
     )

@@ -4,7 +4,7 @@ const LittleFiche = ({nom, img}) => {
     return(
         <div className="little">
             <div className="img">
-                <img src="" alt="logo_tech"/>
+                <img src={img+".png"} alt="logo_tech"/>
             </div>
             <p>{nom}</p>
         </div>

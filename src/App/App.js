@@ -1,7 +1,7 @@
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"; 
 
 import { Layout, Main, Parcours, Contact, Projets, Soumission, 
-    Admin, Dashboard, Board, AjouterParcours, AJouterProjet } from "../Data/Paths/Paths";
+    Admin, Dashboard, Board, AjouterParcours, AjouterProjet } from "../Data/Paths/Paths";
 import { useContext } from "react";
 import { authContext } from "../Context/AuthContext";
 
@@ -65,7 +65,7 @@ export default function App() {
                     }, 
                     {
                         path:'ajouterProjet',
-                        element: <AJouterProjet/>
+                        element: <AjouterProjet/>
                     },
                     {
                         path:'ajouterParcours',

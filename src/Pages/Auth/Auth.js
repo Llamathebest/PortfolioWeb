@@ -15,7 +15,6 @@ const Auth = () => {
         <>
             <input type="number"/>
             <GoogleButton label="Connexion" onClick={googleHandler}/>
-            <Test/>
         </>
     )
 

@@ -100,8 +100,112 @@ export const Education = [
     },
 ];
 
-export const Logiciels = ["Suite Adobe", "3ds Max", "Blender", "Suite Office", "GitHub", "GitLab", "MyPhpAdmin", "VsCode", "Db Browser", "Unity", "Cyberduck", "Wordpress"];
-export const Languages = ["Laravel", "VueJs", "Scss", "Css", "Html", "React", "C#", "javascript", "Librairy js", "Node js"];
+export const Logiciels = [
+    {
+        nom:"Suite Adobe",
+        url:"Adobe",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"3ds Max",
+        url:"3Ds_max",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"Blender",
+        url:"Blender",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"Suite Office",
+        url:"Office",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"GitHub",
+        url:"Github",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"GitLab",
+        url:"Gitlab",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"MyPhpAdmin",
+        url:"MySql",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"VsCode",
+        url:"Vs_code",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"Db Browser",
+        url:"Db_browser",
+        isTrue: false
+    }, 
+    
+    {
+        nom:"Unity",
+        url:"Unity",
+        isTrue: false
+    },  
+    
+    {
+        nom:"Wordpress",
+        url:"WordPress",
+        isTrue: false
+    }
+];
+        
+export const Languages = [
+    {
+        nom:"Laravel",
+        url:"Laravel",
+    },
+    {
+        nom:"VueJs",
+        url:"Vuejs",
+    }, 
+    {
+        nom:"Scss",
+        url:"Sass",
+    }, 
+    {
+        nom:"Css",
+        url:"Css",
+    }, 
+    {
+        nom:"Html",
+        url:"HTML",
+    }, 
+    {
+        nom:"React",
+        url:"React",
+    }, 
+    {
+        nom:"C#",
+        url:"Csharp",
+    }, 
+    {
+        nom:"javascript",
+        url:"Js",
+    }, 
+    {
+        nom:"Node js",
+        url:"NodeJs",
+    }
+    ];
 
 export const Experiences = [
     {

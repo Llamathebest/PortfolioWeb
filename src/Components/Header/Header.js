@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = ({ titre, paragraphe, img }) => {
+
+  const pos = {x:-10, y:-10, z:-10}
   return (
     <div className="header">
       <div className="titre">
@@ -12,7 +14,7 @@ const Header = ({ titre, paragraphe, img }) => {
           <h1>{titre}</h1>
           <p>{paragraphe}</p>
         </span>
-        <Model/>
+        <Model scale={1.5}/>
       </div>
       <span className="reseau-social">
         <Link>
