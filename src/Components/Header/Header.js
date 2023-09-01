@@ -17,15 +17,15 @@ const Header = ({ titre, paragraphe, img }) => {
         <Model scale={1.5}/>
       </div>
       <span className="reseau-social">
-        <Link>
-          <img src="" alt="In" />
-        </Link>
-        <Link>
-          <img src="" alt="Ln" />
-        </Link>
-        <Link>
-          <img src="" alt="Gm" />
-        </Link>
+          <Link>
+          <img src="icons/Linkedln.png" alt="In" />
+          </Link>
+          <Link>
+          <img src="icons/Instagram.png" alt="Ln" />
+          </Link>
+          <Link>
+          <img src="icons/Gmail.png" alt="Gm" />
+          </Link>
       </span>
     </div>
   );

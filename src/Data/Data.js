@@ -1,26 +1,22 @@
 export const typeProjet = [
     {
         type:"Web",
-        texte:"",
-        img:"",
-        reverse:"",
+        texte:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime minus dolorem culpa dignissimos esse iste eum aliquid ratione? Porro ut voluptas quas ea soluta deleniti voluptatem eum fugiat illo?        ",
+        img:"Projets_web",
+        reverse:"reverse",
     }, 
     {
         type:"Jeu",
-        texte:"",
-        img:"",
-        reverse:"reverse",
+        texte:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime minus dolorem culpa dignissimos esse iste eum aliquid ratione? Porro ut voluptas quas ea soluta deleniti voluptatem eum fugiat illo?        ",
+        
+        img:"Projets_jeux",
+        reverse:"",
     },
     {
-        type:"3D/2D",
-        texte:"",
-        img:"",
-        reverse:"",
-    }, 
-    {
         type:"Graphisme",
-        texte:"",
-        img:"",
+        texte:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime minus dolorem culpa dignissimos esse iste eum aliquid ratione? Porro ut voluptas quas ea soluta deleniti voluptatem eum fugiat illo?        ",
+        
+        img:"Projets_graphisme",
         reverse:"reverse",
     },
 ];

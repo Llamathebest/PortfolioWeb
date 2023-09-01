@@ -1,0 +1,16 @@
+
+.projets {
+    .fiche {
+        .contenu {
+            border:none ;
+            right: 0;
+            width: 50%;
+        }
+        &.reverse {
+            .contenu {
+                left: 0%;
+            }
+        }
+
+}
+}

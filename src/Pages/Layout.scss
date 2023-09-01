@@ -59,24 +59,207 @@ img {
 input, select {
     border: none;
 }
-
 header {
-    width: 100%;
-    padding: 2em 1em;
-    background-color: gainsboro;
-    display: flex !important;
-    justify-content: space-between;
-    .menuPrincipal {
-        width: 50%;
-        margin-right: auto;
-        ul {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            
+    .reseau-social {
+        display: none;
+    }
+}
+@media only screen and (max-width:768px) {
+    header {
+        width: 100%;
+        padding: 2em 1em;
+        background-color: gainsboro;
+        display: flex !important;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .menuPrincipal {
+            display: none;
+        }
+        .lang {
+            display: none;
+        }
+        
+        &.open {
+            overflow: hidden;
+            .menuPrincipal {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: gainsboro;
+                width: 100vw;
+                height: 92vh;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-direction: column;
+                    height: 50%;
+                    // margin: auto;
+                    a {
+                        font-size: 2em;
+                        font-weight: bold;
+                    }
+    
+                }
+            }
+            .lang {
+                display: unset;
+                position: absolute;
+                bottom: 1em;
+                right: 1em;
+            }
+            .reseau-social {
+                display: unset;
+                position: absolute;
+                bottom: 1em;
+                left: 1em;
+                display: flex;
+                justify-content: space-between;
+                width: 45%;
+            }
         }
     }
-    
+    .menuProjets {
+        position: absolute;
+        width: 100%;
+        height: 1em;
+        top:4em;
+        div {
+            &.open {
+                height: 90vh;
+                z-index: 10;
+                display: flex;
+
+            }
+            &.close {
+                display: none;
+                height: 0;
+
+            }
+            overflow: hidden;
+            width: 100%;
+            left: 0;
+            padding:2em;
+            background-color: gainsboro;
+            z-index: 3;
+            justify-content: center;
+            align-items: center;
+            ul {
+                width: 100%;
+                margin:2em 0; 
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                height: 50%;
+
+                li {
+                    width: 100%;
+                    text-align: center;
+                }
+                &:first-of-type {
+                    justify-content: space-between;
+                    a {
+                        font-size: 2em;
+                        font-weight: bolder;
+                    }
+                }
+                &:last-of-type {
+                    position: absolute;
+                    top:4em;
+                    background-color: gainsboro;
+                    height: 86vh;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    &.close {
+                        display: none;
+                        
+                    }
+                    &.open {
+                        display: flex;
+                    }
+                    li {
+                        width: 50%;
+                        margin: 2em 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width:768px) {
+    header {
+        width: 100%;
+        padding: 2em 1em;
+        background-color: gainsboro;
+        display: flex !important;
+        justify-content: space-between;
+        flex-direction: row;
+        .menuPrincipal {
+            display: unset;
+            width: 50%;
+            margin-right: auto;
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+        .lang {
+            display: unset;
+        }
+    }
+    .menuProjets {
+        position: relative;
+        width: 100%;
+        height: 1em;
+        div {
+            &.open {
+                animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;  
+            }
+            &.close {
+                animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;  
+            }
+            overflow: hidden;
+            position: absolute;
+            bottom: -24em;
+            height: 25em;
+            width: 100%;
+            left: 0;
+            padding:2em;
+            background-color: gray;
+            display: flex;
+            z-index: -1;
+            ul {
+                width: 10%;
+                margin:2em 0; 
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                li {
+                    width: 100%;
+                }
+                &:first-of-type {
+                    justify-content: space-between;
+                    width: 15%;
+                    border-right: .2em solid black;
+                    margin: 2em 12em;
+                    a {
+                        font-size: 2em;
+                        font-weight: bolder;
+                    }
+                }
+                &:last-of-type {
+                    li {
+                        width: 100%;
+                        margin: 2em 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 footer {
@@ -105,3 +288,48 @@ h3 {
 }
 
 
+/* ----------------------------------------------
+ * Generated by Animista on 2023-8-28 16:24:25
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-bottom
+ * ----------------------------------------
+ */
+  @keyframes slide-bottom {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        height: 0;
+        z-index: -1;
+        
+    }
+    100% {
+        opacity: 1;
+        bottom: -24em;
+        height: 25em;
+        z-index: 2;
+        
+    }
+}
+@keyframes slide-top {
+    0% {
+        opacity: 1;
+        bottom: -24em;
+        height: 25em;
+        z-index: 2;
+        
+    }
+    100% {
+        opacity: 0;
+        bottom: 0;
+        height: 0;
+        z-index: -1;
+
+    }
+  }
+  
