@@ -20,6 +20,7 @@ export {default as Header} from "../../Components/Header/Header";
 export {default as Caroussel} from "../../Components/Caroussel/Caroussel";
 
 export {default as Fiche} from "../../Components/Fiche/Fiche";
+export {default as ProjetFiche} from "../../Components/Fiche/ProjetFiche";
 export {default as SmallFiche} from "../../Components/Fiche/SmallFiche";
 export {default as Little} from "../../Components/Fiche/LittleFiche";
 

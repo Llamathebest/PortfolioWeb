@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { typeProjet} from "../../Data/Data"
-import { Fiche, Header} from "../../Data/Paths/Paths";
+import { ProjetFiche, Header} from "../../Data/Paths/Paths";
 
 import "./Projets.scss";
 
@@ -11,7 +11,7 @@ const Projets = () => {
             <div className="projets">
                 {
                     typeProjet.map(({type, texte, img, reverse}) => (
-                        <Fiche key={type} titre={type} texte={texte} img={img} right={reverse} /> 
+                        <ProjetFiche key={type} titre={type} texte={texte} img={img} right={reverse} /> 
                     ))
                 }
             </div>

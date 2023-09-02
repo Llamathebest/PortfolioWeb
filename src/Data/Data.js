@@ -2,21 +2,78 @@ export const typeProjet = [
     {
         type:"Web",
         texte:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime minus dolorem culpa dignissimos esse iste eum aliquid ratione? Porro ut voluptas quas ea soluta deleniti voluptatem eum fugiat illo?        ",
-        img:"Projets_web",
+        img:[
+            {
+                name:"circle",
+                url:"Categories/circle_web"
+            },
+            {
+                name:"square",
+                url:"Categories/square_web"
+            },
+            {
+                name:"triangle",
+                url:"Categories/triangle_web"
+            },
+            {
+                name:"titre",
+                url:"Categories/titre_web"
+            },
+            {
+                name:"dotted",
+                url:"Categories/dotted_web"
+            },
+        ],
         reverse:"reverse",
     }, 
     {
         type:"Jeu",
         texte:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime minus dolorem culpa dignissimos esse iste eum aliquid ratione? Porro ut voluptas quas ea soluta deleniti voluptatem eum fugiat illo?        ",
-        
-        img:"Projets_jeux",
+        img:[
+            {
+                name:"manette",
+                url:"Categories/Manette_jeu"
+            },
+            {
+                name:"tank",
+                url:"Categories/tank_jeu"
+            },
+            {
+                name:"titre",
+                url:"Categories/titre_jeu"
+            },
+        ],
         reverse:"",
     },
     {
         type:"Graphisme",
         texte:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi maxime minus dolorem culpa dignissimos esse iste eum aliquid ratione? Porro ut voluptas quas ea soluta deleniti voluptatem eum fugiat illo?        ",
-        
-        img:"Projets_graphisme",
+        img:[
+            {
+                name:"book",
+                url:"Categories/book_graph"
+            },
+            {
+                name:"pencil",
+                url:"Categories/pencil_graph"
+            },
+            {
+                name:"sheet_1",
+                url:"Categories/sheets_graph_1"
+            },
+            {
+                name:"sheet_2",
+                url:"Categories/sheets_graph_2"
+            },
+            {
+                name:"sheet_3",
+                url:"Categories/sheets_graph_3"
+            },
+            {
+                name:"titre",
+                url:"Categories/titre_graphisme"
+            },
+        ],
         reverse:"reverse",
     },
 ];

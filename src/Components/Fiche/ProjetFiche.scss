@@ -1,0 +1,88 @@
+@mixin background-img ($url, $repeat, $pos, $size) {
+    background-image: url($url);
+    background-repeat: $repeat;
+    background-position: $pos;
+    background-size: $size;
+
+} 
+.projet {
+    &.fiche {
+        .img {
+            width: 65%;
+            position: relative;
+            .titre {
+                width: 30%;
+                margin: auto;
+            }
+            &.Web {
+                
+                @include background-img('../../../public/Categories/Border_web.png', no-repeat, center, contain );
+                .circle, .triangle, .square {
+                    position: absolute;
+                    max-width: 10%;
+                    max-height: 10%;
+                    right: 20%;
+                    bottom: 40%;
+                }
+                .square {
+                    bottom:55%;
+                    right: 12%;
+                }
+                .circle {
+                    bottom: 50%;
+                    right: 18%;
+                }
+                .dotted {
+                    max-width: 60%;
+                    height: auto;
+                    position: absolute;
+                    bottom: -10%;
+                }
+            }
+            &.Jeu {
+                @include background-img('../../../public/Categories/border_jeu.png', no-repeat, center, contain );
+                .manette, .tank {
+                    position: absolute;
+                    width: 25%;
+                    height: auto;
+                    bottom: 0;
+                }
+                .manette {
+                    width: 30%;
+                    right: -3vw;
+                    bottom: -5vw;
+                }
+            }
+            &.Graphisme {
+                @include background-img('../../../public/Categories/border_graphisme.png', no-repeat, center, contain );
+                .book, .pencil, .sheet_1, .sheet_2, .sheet_3 {
+                    position: absolute;
+                    width: 20%;
+                    height: auto;
+                    bottom: 0;
+                }
+                .pencil {
+                    width: 13%;
+                    left: 13%;
+                    bottom: 25%;
+                }
+                .sheet_1 {
+                    left: 25%;
+                }
+                .sheet_2 {
+                    left: 50%;
+                }
+                .sheet_3 {
+                    right: 0;
+                }
+                .titre {
+                    width: 50%;
+                }
+            }
+        }
+        .contenu {
+            width: 35% ;
+        }
+    }
+
+}
