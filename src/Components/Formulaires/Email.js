@@ -12,7 +12,7 @@ const Email = ({message, step}) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_jag7i3u', 'template_74zvzxe', e.target, 'XOSzWRPpKJFE8dflw')
+        emailjs.sendForm('service_jag7i3u', 'template_74zvzxe', e.target, 'g2_v3RC1P5YLPEpCq')
           .then((result) => {
             console.log(result.text);
             Swal.fire({

@@ -3,14 +3,16 @@ import { Form, Input, TextArea, Button } from 'semantic-ui-react';
 import Swal from 'sweetalert2';
 import "./EmailIInterest.scss";
 import { useState } from 'react';
+import {EmailJS} from "../../Data/Data"
 
 const EmailInterest = ({}) => {
 
   const [info, setInfo] = useState([]);
+  const env = process.env;
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_jag7i3u', 'template_iiq7wwu', e.target, 'XOSzWRPpKJFE8dflw')
+        emailjs.sendForm(EmailJS.id, EmailJS.template_1, e.target, EmailJS.key)
           .then((result) => {
             console.log(result.text);
             Swal.fire({

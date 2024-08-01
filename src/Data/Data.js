@@ -132,7 +132,7 @@ export const Graphisme = [{
 
 export const Goal = {
     titre:"Objectif",
-    texte:"Permet au étudiant de pouvoir avoir un avant goût de réelle projet dans la vie de tout les jours."
+    texte:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus dolor in nunc volutpat, eu mattis velit "
 };
 
 export const Education = [
@@ -320,4 +320,13 @@ export const Loisir = [
     "Je vais dans des convention", 
     "Je fait des soirée de jeux de société", 
     "J’apprendre le langage des signe américain"
+]
+
+export const EmailJS =[
+    {
+        id: process.env.REACT_APP_EMAIL_ID,
+        key: process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+        template_1: process.env.REACT_APP_EMAIL_TEMPLATE_1,
+        template_2: process.env.REACT_APP_EMAIL_TEMPLATE_2
+    }
 ]
